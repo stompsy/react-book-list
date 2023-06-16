@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './App'
 
 const BookList = () => {
 	return (
-		<section>
+		<section className='booklist'>
 			<Book />
 			<Book />
 			<Book />
@@ -16,7 +15,7 @@ const BookList = () => {
 
 const Book = () => {
 	return (
-		<article>
+		<article className='book'>
 			<Image />
 			<Title />
 			<Author />
@@ -24,9 +23,14 @@ const Book = () => {
 	)
 }
 
-const Image = () => <h2>image placeholder</h2>
-const Title = () => <h2>title placeholder</h2>
-const Author = () => <h4>author placeholder</h4>
+const Image = () => (
+	<img
+		src='https://m.media-amazon.com/images/I/4143s1BpV2L._SY291_BO1,204,203,200_QL40_FMwebp_.jpg'
+		alt='Dad Jokes'
+	/>
+)
+const Title = () => <h2>Dad Jokes</h2>
+const Author = () => <h4>Jimmy Niro</h4>
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App />)
+root.render(<BookList />)
